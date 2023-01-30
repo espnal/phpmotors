@@ -17,7 +17,6 @@ require_once '../model/uploads-model.php';
 // Get the vehicles review
 require_once '../model/reviews-model.php';
 
-
 $classifications = getClassifications();
 $navList = createNavList($classifications);
 
@@ -64,7 +63,6 @@ switch ($action) {
         }
 
         $updateReport = updateReview($reviewText, $reviewId);
-        // var_dump($updateReport);
         if ($updateReport == 1) {
             $_SESSION['message'] = "<p class='msg success'>The post was successfully updated.</p>";
         } else {
@@ -102,7 +100,7 @@ switch ($action) {
     default:
         if ($_SESSION['loggedin']) {
             $reviewList = getReviewsByClient($_SESSION['clientData']['clientId']);
-            $reviewContent = '<ul>';
+            $reviewContent = '<ul class= "review-list-adm">';
             foreach ($reviewList as $review) {
                 $reviewContent .= buildReviewItem($review['reviewDate'], $review['reviewId']);
             }

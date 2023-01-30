@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION['clientData'])) {
+    header('location: /phpmotors/');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,24 +47,32 @@
                                                                                 } ?>>
                         <label>Name as it appears
                             <br>
-                            <input name="clientname" id="clientname" type="text" <?php echo 'value="' . substr($review['clientFirstname'], 0, 1) . ". " . $review['clientLastname'] . '"'; ?> readonly>
+                            <input name="clientname" id="clientname" type="text" <?php if (isset($review)) {
+                                                                                        echo 'value="' . substr($review['clientFirstname'], 0, 1) . ". " . $review['clientLastname'] . '"';
+                                                                                    } ?> readonly>
                         </label>
                         <br>
                         <br>
                         <label>Review posted on
                             <br>
-                            <input name="date" id="date" type="text" <?php echo 'value="' . $review['reviewDate'] . '"'; ?> readonly>
+                            <input name="date" id="date" type="text" <?php if (isset($review)) {
+                                                                            echo 'value="' . $review['reviewDate'] . '"';
+                                                                        } ?> readonly>
                         </label>
                         <br>
                         <br>
                         <label>Review
                             <br>
-                            <textarea id="review" name="editReviewText" required><?php echo $review['reviewText'];  ?></textarea>
+                            <textarea id="review" name="editReviewText" required><?php if (isset($review)) {
+                                                                                        echo $review['reviewText'];
+                                                                                    } ?></textarea>
                         </label>
                         <br>
                         <button type="submit" name="submit">Update Review</button>
                         <input type="hidden" name="action" value="editReview">
-                        <input type="hidden" name="review" <?php echo 'value="' . $reviewId . '"' ?>>
+                        <input type="hidden" name="review" <?php if (isset($reviewId)) {
+                                                                echo "value='$reviewId'";
+                                                            } ?>>
                     </form>
                 </div>
             </main>

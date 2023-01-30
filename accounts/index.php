@@ -130,7 +130,7 @@ switch ($action) {
         // $vehicle = getReviewsByClient($invId);
 
         $reviewList = getReviewsByClient($_SESSION['clientData']['clientId']);
-        $reviewContent = '<ul>';
+        $reviewContent = '<ul class= "review-list-adm">';
         foreach ($reviewList as $review) {
             $reviewContent .= buildReviewItem($review);
         }
@@ -222,7 +222,7 @@ switch ($action) {
         if (isset($_SESSION['loggedin'])) {
             if ($_SESSION['loggedin']) {
                 $reviewList = getReviewsByClient($_SESSION['clientData']['clientId']);
-                $reviewContent = '<ul>';
+                $reviewContent = '<ul class= "review-list-adm">';
                 foreach ($reviewList as $review) {
                     $reviewContent .= buildReviewItem($review);
                 }

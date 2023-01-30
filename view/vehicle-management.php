@@ -18,6 +18,7 @@ if (isset($_SESSION['message'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script defer src="../js/inventory.js"></script>
     <title>PHP Motors</title>
 </head>
 
@@ -67,7 +68,7 @@ if (isset($_SESSION['message'])) {
             </footer>
         </div>
     </div>
-    <script src="../js/inventory.js"></script>
+
 </body>
 
 </html>

@@ -178,7 +178,6 @@ switch ($action) {
             $clientUsername = buildScreenName($_SESSION['clientData']['clientFirstname'], $_SESSION['clientData']['clientLastname']);
         }
         $reviews = getReviewsByInv($vehicleId);
-        // var_dump($reviews);
         $previousReviews = "<div class='previous-reviews'>";
         foreach ($reviews as $review) {
             $previousReviews .= buildReview($review['clientFirstname'], $review['clientLastname'], $review['reviewDate'], $review['reviewText']);

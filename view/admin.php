@@ -14,6 +14,7 @@ if (!$_SESSION['loggedin']) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <title>Admin</title>
 </head>
 
@@ -81,6 +82,7 @@ if (!$_SESSION['loggedin']) {
             </footer>
         </div>
     </div>
+    <script src="../js/js.js"></script>
 </body>
 
 </html><?php unset($_SESSION['message']); ?>
